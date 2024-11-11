@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile_test
+    command: ["go", "test", "./..."]
+    environment:
+      - WEATHER_API_KEY=testkey
+    tty: true
